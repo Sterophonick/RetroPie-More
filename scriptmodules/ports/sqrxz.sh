@@ -3,7 +3,7 @@ rp_module_desc="Sqrxz - Extremely Difficult Platformer"
 rp_module_section="exp"
 rp_module_flags="!x86 !mali !kms"
 
-function depends_giana() {
+function depends_sqrxz() {
     getDepends libsdl1.2-dev libsdl-mixer1.2-dev libraspberrypi-dev
 }
 
