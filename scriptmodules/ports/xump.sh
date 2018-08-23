@@ -1,6 +1,6 @@
 rp_module_id="xump"
 rp_module_desc="Xump - Platform puzzler"
-rp_module_section="exp"
+rp_module_section="opt"
 rp_module_flags="!x86 !mali !kms"
 
 function depends_xump() {
