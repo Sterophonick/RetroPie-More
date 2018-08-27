@@ -35,7 +35,7 @@ function configure_xsokoban() {
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
-/usr/games/xsok
+xsok
 _EOF_
     chmod +x "$md_inst/xsokoban.sh"
 }

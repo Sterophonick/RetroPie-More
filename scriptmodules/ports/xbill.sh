@@ -9,33 +9,33 @@
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
 
-rp_module_id="ballz"
-rp_module_desc="B.A.L.L.Z. - 2D Platformer"
+rp_module_id="xbill"
+rp_module_desc="XBill - Get rid of those viruses!"
 rp_module_licence="PROP"
 rp_module_section="exp"
 rp_module_flags="!mali !x86 !kms"
 
-function depends_ballz() {
-    getDepends xorg matchbox ballz-data
+function depends_xbill() {
+    getDepends xorg matchbox
 }
 
-function install_bin_ballz() {
-    [[ -f "$md_inst/ballz" ]] && rm -rf "$md_inst/"*
-    aptInstall ballz
+function install_bin_xbill() {
+    [[ -f "$md_inst/xbomb" ]] && rm -rf "$md_inst/"*
+    aptInstall xbomb
 }
 
-function remove_ballz() {
-    aptRemove ballz
+function remove_xbill() {
+    aptRemove xbomb
 }
 
-function configure_ballz() {
-    addPort "$md_id" "ballz" "Ballz" "xinit $md_inst/ballz.sh"
+function configure_xbill() {
+    addPort "$md_id" "xbill" "xbill" "xinit $md_inst/xbill.sh"
 
-    cat >"$md_inst/ballz.sh" << _EOF_
+    cat >"$md_inst/xbill.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
-/usr/games/ballz
+xbill
 _EOF_
-    chmod +x "$md_inst/ballz.sh"
+    chmod +x "$md_inst/xbill.sh"
 }
