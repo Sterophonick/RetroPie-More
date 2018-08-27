@@ -12,7 +12,7 @@
 rp_module_id="xjump"
 rp_module_desc="XJump - Infinite tower climbing game"
 rp_module_licence="PROP"
-rp_module_section="exp"
+rp_module_section="opt"
 rp_module_flags="!mali !x86 !kms"
 
 function depends_xjump() {
@@ -35,7 +35,7 @@ function configure_xjump() {
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
-/usr/games/xjump
+xjump
 _EOF_
     chmod +x "$md_inst/xjump.sh"
 }
