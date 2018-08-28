@@ -29,7 +29,7 @@ function remove_ballz() {
 }
 
 function configure_ballz() {
-    addPort "$md_id" "ballz" "Ballz" "xinit $md_inst/ballz.sh"
+    addPort "$md_id" "ballz" "Ballz" "xinit $md_inst/B.A.L.L.Z..sh"
 
     cat >"$md_inst/B.A.L.L.Z..sh" << _EOF_
 #!/bin/bash
