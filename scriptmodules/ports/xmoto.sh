@@ -9,33 +9,33 @@
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
 
-rp_module_id="xbill"
-rp_module_desc="XBill - Get rid of those viruses!"
+rp_module_id="xmoto"
+rp_module_desc="XMoto - Motorcross Platforming Game"
 rp_module_licence="PROP"
 rp_module_section="exp"
 rp_module_flags="!mali !x86 !kms"
 
-function depends_xbill() {
+function depends_xmoto() {
     getDepends xorg matchbox
 }
 
-function install_bin_xbill() {
-    [[ -f "$md_inst/xbill" ]] && rm -rf "$md_inst/"*
-    aptInstall xbill
+function install_bin_xmoto() {
+    [[ -f "$md_inst/xmoto" ]] && rm -rf "$md_inst/"*
+    aptInstall xmoto
 }
 
-function remove_xbill() {
-    aptRemove xbill
+function remove_xmoto() {
+    aptRemove xmoto
 }
 
-function configure_xbill() {
-    addPort "$md_id" "xbill" "xbill" "xinit $md_inst/xbill.sh"
+function configure_xmoto() {
+    addPort "$md_id" "xmoto" "XMoto" "xinit $md_inst/xmoto.sh"
 
-    cat >"$md_inst/xbill.sh" << _EOF_
+    cat >"$md_inst/xmoto.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
-xbill
+xmoto
 _EOF_
-    chmod +x "$md_inst/xbill.sh"
+    chmod +x "$md_inst/xmoto.sh"
 }
