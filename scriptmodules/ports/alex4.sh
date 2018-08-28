@@ -8,7 +8,7 @@
 # See the LICENSE.md file at the top-level directory of this distribution and
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
-
+ 
 rp_module_id="alex4"
 rp_module_desc="Alex the Allegator 4 - 2D Retro Platformer"
 rp_module_licence="PROP"

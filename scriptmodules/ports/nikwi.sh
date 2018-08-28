@@ -8,7 +8,7 @@
 # See the LICENSE.md file at the top-level directory of this distribution and
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
-
+ 
 rp_module_id="nikwi"
 rp_module_desc="Nikwi - platform game where your goal is to collect candies"
 rp_module_licence="PROP"

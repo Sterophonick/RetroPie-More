@@ -8,7 +8,7 @@
 # See the LICENSE.md file at the top-level directory of this distribution and
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
-
+ 
 rp_module_id="holotz-castle"
 rp_module_desc="holotz-castle - platform game with high doses of mystery"
 rp_module_licence="PROP"

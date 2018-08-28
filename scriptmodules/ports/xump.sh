@@ -2,7 +2,7 @@ rp_module_id="xump"
 rp_module_desc="Xump - Platform puzzler"
 rp_module_section="opt"
 rp_module_flags="!x86 !mali !kms"
-
+ 
 function depends_xump() {
     getDepends libsdl1.2-dev libsdl-mixer1.2-dev libraspberrypi-dev
 }

@@ -8,7 +8,7 @@
 # See the LICENSE.md file at the top-level directory of this distribution and
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
-
+ 
 rp_module_id="jumpnbump"
 rp_module_desc="Jump 'n Bump - cute multiplayer platform game with bunnies"
 rp_module_licence="PROP"

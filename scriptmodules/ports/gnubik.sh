@@ -8,7 +8,7 @@
 # See the LICENSE.md file at the top-level directory of this distribution and
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
-
+ 
 rp_module_id="gnubik"
 rp_module_desc="GNUbik - GNU Rubik's Cube"
 rp_module_licence="PROP"
