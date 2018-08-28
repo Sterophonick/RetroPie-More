@@ -12,8 +12,8 @@
 rp_module_id="ballz"
 rp_module_desc="B.A.L.L.Z. - 2D Platformer"
 rp_module_licence="PROP"
-rp_module_section="exp"
-rp_module_flags="!mali !x86 !kms"
+rp_module_section="opt"
+rp_module_flags="!mali !kms"
 
 function depends_ballz() {
     getDepends xorg matchbox ballz-data
@@ -31,11 +31,11 @@ function remove_ballz() {
 function configure_ballz() {
     addPort "$md_id" "ballz" "Ballz" "xinit $md_inst/ballz.sh"
 
-    cat >"$md_inst/ballz.sh" << _EOF_
+    cat >"$md_inst/B.A.L.L.Z..sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
 /usr/games/ballz
 _EOF_
-    chmod +x "$md_inst/ballz.sh"
+    chmod +x "$md_inst/B.A.L.L.Z..sh"
 }
