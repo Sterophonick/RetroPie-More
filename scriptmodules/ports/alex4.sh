@@ -29,7 +29,7 @@ function remove_alex4() {
 }
 
 function configure_alex4() {
-    addPort "$md_id" "alex4" "alex4" "xinit $md_inst/alex4.sh"
+    addPort "$md_id" "alex4" "alex4" "xinit $md_inst/Alex The Allegator 4.sh"
 
     cat >"$md_inst/Alex the Allegator 4.sh" << _EOF_
 #!/bin/bash
