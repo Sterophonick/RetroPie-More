@@ -35,7 +35,7 @@ function configure_pipenightdreams() {
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
-/usr/bin/pipenightdreams
+pipenightdreams
 _EOF_
     chmod +x "$md_inst/pipenightdreams.sh"
 }
