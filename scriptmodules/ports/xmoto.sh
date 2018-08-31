@@ -16,7 +16,7 @@ rp_module_section="exp"
 rp_module_flags="!mali !x86 !kms"
 
 function depends_xmoto() {
-    getDepends xorg matchbox
+    getDepends xorg matchbox xmoto-data libbz2-1.0 libc6 libcurl3-gnutls libgcc1 libgl1 libglu1 libjpeg62-turbo liblua5.1-0 libode6 libpng16-16 libsdl-mixer1.2 libsdl-net1.2 libsdl-ttf2.0-0 libsdl1.2debian libsqlite3-0 libstdc++6 libxdg-basedir1 libxml2 zlib1g
 }
 
 function install_bin_xmoto() {
