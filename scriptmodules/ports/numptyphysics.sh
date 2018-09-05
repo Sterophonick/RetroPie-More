@@ -16,7 +16,7 @@ rp_module_section="exp"
 rp_module_flags="!mali !kms"
 
 function depends_numptyphysics() {
-    getDepends xorg matchbox libfontconfig1 libfreetype6 libgcc1 libsdl-image1.2 libsdl-ttf2.0-0 libstc++6 libx11-6 ttf-femkeklaver zlib1g
+    getDepends xorg matchbox libfontconfig1 libfreetype6 libgcc1 libsdl-image1.2 libsdl-ttf2.0-0 libstc++6 libx11-6 fonts-femkeklaver ttf-femkeklaver zlib1g
 }
 
 function install_bin_numptyphysics() {
