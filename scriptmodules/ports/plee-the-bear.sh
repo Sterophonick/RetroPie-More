@@ -29,13 +29,13 @@ function remove_plee-the-bear() {
 }
 
 function configure_plee-the-bear() {
-    addPort "$md_id" "plee-the-bear" "plee-the-bear" "xinit $md_inst/Plee The Bear.sh"
+    addPort "$md_id" "plee-the-bear" "plee-the-bear" "xinit $md_inst/plee-the-bear.sh"
 
-    cat >"$md_inst/Plee The Bear.sh" << _EOF_
+    cat >"$md_inst/plee-the-bear.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
 plee-the-bear
 _EOF_
-    chmod +x "$md_inst/Plee The Bear.sh"
+    chmod +x "$md_inst/plee-the-bear.sh"
 }

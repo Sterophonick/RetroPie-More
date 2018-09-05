@@ -15,27 +15,27 @@ rp_module_licence="PROP"
 rp_module_section="exp"
 rp_module_flags="!mali !kms"
 
-function depends_gnubik() {
+function depends_neverball() {
     getDepends xorg matchbox libgl1-mesa-glx libjpeg62-turbo libopenhmd0 libphysfs1 libpng16-16 libsdl2-2.0-0 libsdl2-ttf-2.0-0 libvorbisfile3 neverball-data
 }
 
-function install_bin_gnubik() {
-    [[ -f "$md_inst/gnubik" ]] && rm -rf "$md_inst/"*
-    aptInstall gnubik
+function install_bin_neverball() {
+    [[ -f "$md_inst/neverball" ]] && rm -rf "$md_inst/"*
+    aptInstall neverball
 }
 
-function remove_gnubik() {
-    aptRemove gnubik
+function remove_neverball() {
+    aptRemove neverball
 }
 
-function configure_gnubik() {
-    addPort "$md_id" "gnubik" "gnubik" "xinit $md_inst/gnubik.sh"
+function configure_neverball() {
+    addPort "$md_id" "neverball" "neverball" "xinit $md_inst/neverball.sh"
 
-    cat >"$md_inst/gnubik.sh" << _EOF_
+    cat >"$md_inst/neverball.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
-gnubik
+neverball
 _EOF_
-    chmod +x "$md_inst/gnubik.sh"
+    chmod +x "$md_inst/neverball.sh"
 }

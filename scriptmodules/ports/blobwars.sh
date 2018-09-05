@@ -29,13 +29,13 @@ function remove_blobwars() {
 }
 
 function configure_blobwars() {
-    addPort "$md_id" "blobwars" "blobwars" "xinit $md_inst/Blob Wars - Metal Blob Solid.sh"
+    addPort "$md_id" "blobwars" "blobwars" "xinit $md_inst/blobwars.sh"
 
-    cat >"$md_inst/Blob Wars - Metal Blob Solid.sh" << _EOF_
+    cat >"$md_inst/blobwars.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
 blobwars
 _EOF_
-    chmod +x "$md_inst/Blob Wars - Metal Blob Solid.sh"
+    chmod +x "$md_inst/blobwars.sh"
 }

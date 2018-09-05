@@ -29,13 +29,13 @@ function remove_mirrormagic() {
 }
 
 function configure_mirrormagic() {
-    addPort "$md_id" "mirrormagic" "mirrormagic" "xinit $md_inst/Mirror Magic.sh"
+    addPort "$md_id" "mirrormagic" "mirrormagic" "xinit $md_inst/mirrormagic.sh"
 
-    cat >"$md_inst/Mirror Magic.sh" << _EOF_
+    cat >"$md_inst/mirrormagic.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
 mirrormagic
 _EOF_
-    chmod +x "$md_inst/Mirror Magic.sh"
+    chmod +x "$md_inst/mirrormagic.sh"
 }
