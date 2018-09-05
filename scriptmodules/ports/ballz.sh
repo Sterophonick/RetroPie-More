@@ -16,7 +16,7 @@ rp_module_section="opt"
 rp_module_flags="!mali !kms"
 
 function depends_ballz() {
-    getDepends xorg matchbox ballz-data
+    getDepends xorg matchbox ballz-data libaldmb1 liballegro4.4 libc6 libdumb1 libgcc1 libguichan-0.8.1-1v5 libguichan-allegro-0.8.1-1v5 libstdc++6
 }
 
 function install_bin_ballz() {
