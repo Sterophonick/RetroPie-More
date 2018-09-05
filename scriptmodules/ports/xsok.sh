@@ -21,21 +21,21 @@ function depends_xsokoban() {
 
 function install_bin_xsokoban() {
     [[ -f "$md_inst/xsokoban" ]] && rm -rf "$md_inst/"*
-    aptInstall xsokoban
+    aptInstall xsok
 }
 
 function remove_xsokoban() {
-    aptRemove xsokoban
+    aptRemove xsok
 }
 
 function configure_xsokoban() {
-    addPort "$md_id" "xsokoban" "xsokoban" "xinit $md_inst/xsokoban.sh"
+    addPort "$md_id" "xsokoban" "xsokoban" "xinit $md_inst/xsok.sh"
 
-    cat >"$md_inst/xsokoban.sh" << _EOF_
+    cat >"$md_inst/xsok.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
 xsok
 _EOF_
-    chmod +x "$md_inst/xsokoban.sh"
+    chmod +x "$md_inst/xsok.sh"
 }

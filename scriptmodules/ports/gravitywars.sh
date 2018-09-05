@@ -29,13 +29,13 @@ function remove_gravitywars() {
 }
 
 function configure_gravitywars() {
-    addPort "$md_id" "gravitywars" "gravitywars" "xinit $md_inst/Gravity Wars.sh"
+    addPort "$md_id" "gravitywars" "gravitywars" "xinit $md_inst/gravitywars.sh"
 
-    cat >"$md_inst/Gravity Wars.sh" << _EOF_
+    cat >"$md_inst/gravitywars.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
 gravitywars
 _EOF_
-    chmod +x "$md_inst/Gravity Wars.sh"
+    chmod +x "$md_inst/gravitywarsw.sh"
 }
