@@ -38,4 +38,9 @@ matchbox-window-manager &
 ballz
 _EOF_
     chmod +x "$md_inst/ballz.sh"
+	
+	cat > "/opt/retropie/configs/all/videomodes.cfg" << _EOF_
+	
+ballz = "CEA-1"
+_EOF_
 }
