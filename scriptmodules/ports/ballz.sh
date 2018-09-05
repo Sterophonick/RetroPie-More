@@ -35,7 +35,7 @@ function configure_ballz() {
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager &
-ballz --fullscreen
+ballz
 _EOF_
     chmod +x "$md_inst/ballz.sh"
 }
