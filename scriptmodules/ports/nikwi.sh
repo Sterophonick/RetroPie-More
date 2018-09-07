@@ -38,8 +38,8 @@ matchbox-window-manager &
 nikwi --fullscreen
 _EOF_
     chmod +x "$md_inst/nikwi.sh"
-		cat > "/opt/retropie/configs/all/videomodes.cfg" << _EOF_
+		cat > "/opt/retropie/configs/all/videomodes2.cfg" << _EOF_
 	
-nikwi = "CEA-1"
+nikwi = "DMT-4"
 _EOF_
 }
