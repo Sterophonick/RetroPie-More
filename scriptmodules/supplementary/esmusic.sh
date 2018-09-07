@@ -1,5 +1,5 @@
 rp_module_id="esmusic"
-rp_module_desc="EmulationStation Background Music"
+rp_module_desc="EmulationStation Background Music - Play music in EmulationStation"
 rp_module_licence="PROP"
 rp_module_section="exp"
 rp_module_flags="!mali !kms"
@@ -8,8 +8,41 @@ function depends_esmusic() {
     getDepends python-pygame
 }
 
+function _is_enabled_esmusic() {
+    grep -q 'sudo python /opt/retropie/supplementary/esmusic/esmusic.py' /etc/rc.local
+    return $?
+}
+
+function enable_esmusic() {
+    if _is_enabled_esmusic; then
+        printMsgs "dialog" "EmulationStation Music is already enabled"
+		return
+    fi
+    sed -i "s|^exit 0$|sudo python /opt/retropie/supplementary/esmusic/esmusic.py\\nexit 0|" /etc/rc.local
+	printMsgs "dialog" "ESMusic is now enabled and will be started on next boot"
+}
+
+function disable_esmusic() {
+   if _is_enabled_esmusic; then
+        dialog \
+          --yesno "Are you sure you want to disable ESMusic on boot?" \
+          22 76 2>&1 >/dev/tty || return
+
+        sed -i "/sudo python /opt/retropie/supplementary/esmusic/esmusic.py/d" /etc/rc.local
+        printMsgs "dialog" "ESMusic has been disabled"
+    else
+        printMsgs "dialog" "ESMusic was already disabled"
+    fi
+}
+
 function install_bin_esmusic() {
-    cat >"$md_inst/esmusic.py" << _EOF_
+	if [ ! -d "/opt/retropie/supplementary/esmusic" ]; then
+		sudo mkdir /opt/retropie/supplementary/esmusic
+	fi
+	if [ -f /opt/retropie/supplementary/esmusic/esmusic.py ]; then
+		sudo rm /opt/retropie/supplementary/esmusic/esmusic.py
+	fi
+    cat >"/opt/retropie/supplementary/esmusic/esmusic.py" << _EOF_
 import os
 import time
 import random
@@ -18,11 +51,21 @@ import random
 
 #CONFIG SECTION
 startdelay = 31 # Value (in seconds) to delay audio start.  If you have a splash screen with audio and the script is playing music over the top of it, increase this value to delay the script from starting.
-musicdir = '/home/pi/RetroPie/music'
-maxvolume = 0.75
+musicdir = '/home/pi/RetroPie/Music'
+maxvolume = 1.00
 volumefadespeed = 0.02
 restart = True # If true, this will cause the script to fade the music out and -stop- the song rather than pause it.
 startsong = "" # if this is not blank, this is the EXACT, CaSeSeNsAtIvE filename of the song you always want to play first on boot.
+
+# All the emulators/programs that will stop the music
+emulatornames = ["oricutron","startx","coolcv_pi","retroarch","ags","uae4all2","uae4arm","capricerpi","linapple","hatari","stella","atari800","xroar","vice","daphne","reicast","pifba","osmose","gpsp","jzintv","basiliskll","mame","advmame","dgen","openmsx","mupen64plus","gngeo","dosbox","ppsspp","simcoupe","scummvm","snes9x","pisnes","frotz","fbzx","fuse","gemrb","cgenesis","zdoom","eduke32","lincity","love","kodi","alephone","micropolis","openbor","openttd","opentyrian","cannonball","tyrquake","ioquake3","residualvm","xrick","sdlpop","uqm","stratagus","wolf4sdl","solarus","minecraft-pi","TheyNeedToBeFed","SuperCrateBox","xm7","kodi-standalone","chromium-standalone","smw","gnp","gearboy","supertux","wolf4sdl","gnp","x64"]
+
+
+
+# ____________________________________________________________________________________________________________________________________
+
+
+
 
 #local variables
 bgm = [mp3 for mp3 in os.listdir(musicdir) if mp3[-4:] == ".mp3" or mp3[-4:] == ".ogg"] # Find everything that's .mp3 or .ogg
@@ -32,9 +75,6 @@ from pygame import mixer # import PyGame's music mixer
 mixer.init() # Prep that bad boy up.
 random.seed()
 volume = maxvolume # Store this for later use to handle fading out.
-
-#TODO: Fill in all of the current RetroPie Emulator process names in this list.
-emulatornames = ["oricutron","startx","coolcv_pi","retroarch","ags","uae4all2","uae4arm","capricerpi","linapple","hatari","stella","atari800","xroar","vice","daphne","reicast","pifba","osmose","gpsp","jzintv","basiliskll","mame","advmame","dgen","openmsx","mupen64plus","gngeo","dosbox","ppsspp","simcoupe","scummvm","snes9x","pisnes","frotz","fbzx","fuse","gemrb","cgenesis","zdoom","eduke32","lincity","love","kodi","alephone","micropolis","openbor","openttd","opentyrian","cannonball","tyrquake","ioquake3","residualvm","xrick","sdlpop","uqm","stratagus","wolf4sdl","solarus","minecraft-pi","TheyNeedToBeFed","SuperCrateBox","xm7","kodi-standalone","chromium-standalone","smw","gnp","gearboy","supertux","wolf4sdl","gnp","x64"]
 
 #test: Ran into some issues with script crashing on a cold boot, so we're camping for emulationstation (if ES can start, so can we!)
 esStarted = False
@@ -155,12 +195,71 @@ while True:
 print "An error has occurred that has stopped Test1.py from executing." #theoretically you should neve
 
 _EOF_
+    if ! _is_enabled_esmusic; then
+		sed -i "s|^exit 0$|sudo python /opt/retropie/supplementary/esmusic/esmusic.py &\\nexit 0|" /etc/rc.local
+	fi
+
 }
 
 function remove_esmusic() {
-
+	disable_esmusic
+	rm -rf /opt/retropie/summplementary/esmusic
 }
 
-function configure_esmusic() {
+function set_song_esmusic() {
+    local path="$1"
+    local type="$2"
 
+    local regex
+    local options=()
+    local i=0
+    while read splashdir; do
+        mdir=
+        if echo "$mdir" | grep -q "$regex"; then
+            options+=("$i" "$mdir")
+            ((i++))
+        fi
+    done < <(find "$path" -type f ! -regex ".*/\..*" ! -regex ".*LICENSE" ! -regex ".*README.*" ! -regex ".*\.sh" | sort)
+    if [[ "${#options[@]}" -eq 0 ]]; then
+        printMsgs "dialog" "There is no music located in $path"
+        return
+    fi
+    local cmd=(dialog --backtitle "$__backtitle" --menu "Choose song." 22 76 16)
+    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+    [[ -n "$choice" ]] && echo "$path/${options[choice*2+1]}"
+}
+
+function gui_esmusic() {
+	local choice=()
+	local cmd=()
+	local options=(
+		1 "Enable ESMusic on Boot"
+		2 "Disable ESMusic on Boot"
+		3 "Edit Music Script"
+	)
+	local choice
+	local status
+	while true; do
+	    if _is_enabled_esmusic; then
+            status+="ESMusic is currently enabled on boot"
+        else
+            status+="ESMusic is currently disabled on boot"
+        fi
+		cmd=(dialog --backtitle "$__backtitle" --menu "$status\n\nChoose an option." 22 86 16)
+		choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+		if [[ -n "$choice" ]]; then
+			case "$choice" in
+				1) enable_esmusic
+					;;
+				
+				2) disable_esmusic
+					;;
+					
+				3) editFile /opt/retropie/supplementary/esmusic/esmusic.py
+                    ;;
+            esac
+        else
+            break
+        fi
+    done
 }
