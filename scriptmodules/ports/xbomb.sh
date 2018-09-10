@@ -12,7 +12,7 @@
 rp_module_id="xbomb"
 rp_module_desc="xbomb - Minesweeper clone"
 rp_module_licence="PROP"
-rp_module_section="opt"
+rp_module_section="exp"
 rp_module_flags="!mali !x86 !kms"
 
 function depends_xbomb() {

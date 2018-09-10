@@ -12,7 +12,7 @@
 rp_module_id="xsoldier"
 rp_module_desc="XSoldier - shoot 'em up game with the \"not shooting\" bonus"
 rp_module_licence="PROP"
-rp_module_section="opt"
+rp_module_section="exp"
 rp_module_flags="!mali !x86 !kms"
 
 function depends_xsoldier() {

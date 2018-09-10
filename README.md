@@ -1,46 +1,50 @@
 # RetroPie-More
-A small collection of RetroPie-Setup scriptmodules to add new ports, emulators or libretrocores. There are only several that I know work correctly.
+A small collection of experimental RetroPie-Setup scriptmodules to add new ports, emulators or libretrocores.
+There is a handful of ports and scripts that works properly.
 
 ## Ports
 - [X] - alex4 - Alex the Allegator 4
-- [ ] - monsterz - ???
-- [ ] - neverball - Super Monkey Ball Clone
-- [X] - Spout - Abstract 2D pixel game
-- [X] - XSok - Sokoban Clone
+- [ ] - monsterz - 2D puzzle game
+- [ ] - neverball - Super Monkey Ball Clone. Probably needs OpenGL. Doesn't work.
+- [X] - Spout - Abstract 2D pixel game. Tested and works.
+- [X] - XSok - Sokoban Clone. Tested and works.
 - [ ] - heroes - 2D fighting game
-- [X] - Scratch - Easy programming language
+- [X] - Scratch - Easy programming language. I converted it to a system in ES, but havent done it here.
 - [ ] - blobwars - Doesn't work. Probably OpenGL
-- [X] - Nikwi - Candy themed 2D platform game
-- [X] - Xump - 2D puzzle game by retroguru
-- [ ] - PipeNightDreams - ???
-- [X] - Xjump - Doodle Jump Clone
-- [ ] - OneIsEnough - ???
-- [X] - BALLZ - 2D Platform game
-- [ ] - gravitywars - Rocket physics games
-- [X] - holotz-castle - 2D Platform game with puzzle elements
-- [X] - mirrormagic - Deflektor clone
+- [X] - Nikwi - Candy themed 2D platform game. Tested and works with no issue.
+- [X] - Xump - 2D puzzle game by retroguru. Tested and works flawlessly.
+- [ ] - PipeNightDreams - connect pipes to get the water flowing from inlet to outlet. Tested and doesn't work.
+- [X] - Xjump - Doodle Jump Clone. Tested and works.
+- [ ] - OneIsEnough - 2D Fighting game.  Not tested.
+- [X] - BALLZ - 2D Platform game. Tested and works properly, though you have to enter fullscreen manually.
+- [ ] - gravitywars - Rocket physics games. Doesn't launch, probably with OpenGL.
+- [X] - holotz-castle - 2D Platform game with puzzle elements. Tested and works.
+- [X] - mirrormagic - Deflektor clone. Tested and works.
 - [ ] - caveexpress - IDK why it doesnt work
-- [ ] - xsoldier - dont work
-- [X] - Swell-Foop - Tetris-like puzzle game
-- [X] - XBomb - Minesweeper Clone
+- [X] - xsoldier - Galaga Clone. Tested and works
+- [X] - Swell-Foop - Tetris-like puzzle game Tested and works.
+- [X] - XBomb - Minesweeper Clone. Tested and works.
 - [ ] - 2048-qt - 2048 clone
 - [X] - XBill - Get rid of those viruses!
 - [X] - numptyphysics - 2D crayon based puzzle game
-- [ ] - xmoto - Runs slowly
-- [X] - GNUBik - 3D Rubik's Cube
-- [ ] - jumpnbump - 2D Platforming fighter with bunnies. Not working.
-- [X] - TuxFootball - 2D Soccer Game
-- [ ] - minetest - Minecraft clone
+- [ ] - xmoto - Excitebike clone. Runs slowly
+- [X] - GNUBik - 3D Rubik's Cube. Works, but runs slowly.
+- [ ] - jumpnbump - 2D Platforming fighter with bunnies. Hard-crashes when you press space. Wat.
+- [X] - TuxFootball - 2D Soccer Game. Tested and Works.
+- [ ] - minetest - Minecraft clone. Untested.
 - [ ] - plee-the-bear - 2D platform game. Doesn't work probably because of OpenGL.
 
 ## Emulators
 - [ ] - gnash - GNU Flash Player
 
 ## Libretro Cores
-- [X] - lr-theodore - Thomson TO8 Emu for libretrocores
+- [X] - lr-theodore - Thomson TO8 Emu for libretro. Working properly.
 - [ ] - lr-mesen - NES Emulator
 - [ ] - lr-lutro - 2D Game Framework
 - [ ] - lr-chailove - 2D Game Framework with chaiscript
 
 ## Supplementary
-- [X] - ESMusic - Script Installer for EmulationStation Music.
+- [X] - ESMusic - Script Installer for EmulationStation Music. Working, just needs a bit of polish.
+
+## Hall of Fame - Scripts Accepted into RetroPie-Setup
+None yet :(

@@ -12,7 +12,7 @@
 rp_module_id="heroes"
 rp_module_desc="Heroes - Collect powerups and avoid your opponents' trails"
 rp_module_licence="PROP"
-rp_module_section="opt"
+rp_module_section="exp"
 rp_module_flags="!mali !kms"
 
 function depends_heroes() {

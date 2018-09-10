@@ -12,7 +12,7 @@
 rp_module_id="monsterz"
 rp_module_desc="monsterz - arcade puzzle game"
 rp_module_licence="PROP"
-rp_module_section="opt"
+rp_module_section="exp"
 rp_module_flags="!mali !kms"
 
 function depends_monsterz() {
