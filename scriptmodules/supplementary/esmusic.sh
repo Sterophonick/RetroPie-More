@@ -1,5 +1,5 @@
 rp_module_id="esmusic"
-rp_module_desc="EmulationStation Background Music - Play music in EmulationStation"
+rp_module_desc="ESMusic - Play music in EmulationStation"
 rp_module_licence="PROP"
 rp_module_section="exp"
 rp_module_flags="!mali !kms"
@@ -28,7 +28,7 @@ function disable_esmusic() {
           --yesno "Are you sure you want to disable ESMusic on boot?" \
           22 76 2>&1 >/dev/tty || return
 
-        sed -i "/sudo python /opt/retropie/supplementary/esmusic/esmusic.py/d" /etc/rc.local
+        sudo sed -i "/sudo python \/opt\/retropie\/supplementary\/esmusic\/esmusic.py/d" /etc/rc.local
         printMsgs "dialog" "ESMusic has been disabled"
     else
         printMsgs "dialog" "ESMusic was already disabled"
@@ -241,9 +241,9 @@ function gui_esmusic() {
 	local status
 	while true; do
 	    if _is_enabled_esmusic; then
-            status+="ESMusic is currently enabled on boot"
+            status="ESMusic is currently enabled on boot"
         else
-            status+="ESMusic is currently disabled on boot"
+            status="ESMusic is currently disabled on boot"
         fi
 		cmd=(dialog --backtitle "$__backtitle" --menu "$status\n\nChoose an option." 22 86 16)
 		choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
