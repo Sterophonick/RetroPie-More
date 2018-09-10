@@ -3,6 +3,8 @@ A small collection of RetroPie-Setup scriptmodules to add new ports, emulators o
 
 ## Ports
  - [X] - alex4 - Alex the Allegator 4
+ - [ ] - monsterz - ???
+ - [ ] - neverball - Super Monkey Ball Clone
  - [X] - Spout - Abstract 2D pixel game
  - [X] - XSok - Sokoban Clone
   - [ ] - heroes - 2D fighting game
