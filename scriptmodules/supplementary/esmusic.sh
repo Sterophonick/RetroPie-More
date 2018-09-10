@@ -18,7 +18,7 @@ function enable_esmusic() {
         printMsgs "dialog" "EmulationStation Music is already enabled"
 		return
     fi
-    sed -i "s|^exit 0$|sudo python /opt/retropie/supplementary/esmusic/esmusic.py\\nexit 0|" /etc/rc.local
+    sed -i "s|^exit 0$|sudo python /opt/retropie/supplementary/esmusic/esmusic.py &\\nexit 0|" /etc/rc.local
 	printMsgs "dialog" "ESMusic is now enabled and will be started on next boot"
 }
 
@@ -28,7 +28,7 @@ function disable_esmusic() {
           --yesno "Are you sure you want to disable ESMusic on boot?" \
           22 76 2>&1 >/dev/tty || return
 
-        sudo sed -i "/sudo python \/opt\/retropie\/supplementary\/esmusic\/esmusic.py/d" /etc/rc.local
+        sudo sed -i "/sudo python \/opt\/retropie\/supplementary\/esmusic\/esmusic.py &/d" /etc/rc.local
         printMsgs "dialog" "ESMusic has been disabled"
     else
         printMsgs "dialog" "ESMusic was already disabled"

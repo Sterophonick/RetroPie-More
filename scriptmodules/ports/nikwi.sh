@@ -37,9 +37,6 @@ xset -dpms s off s noblank
 matchbox-window-manager &
 nikwi --fullscreen
 _EOF_
-    chmod +x "$md_inst/nikwi.sh"
-		cat > "/opt/retropie/configs/all/videomodes2.cfg" << _EOF_
-	
-nikwi = "DMT-4"
-_EOF_
+sed -i "/nikwi = \"DMT-4\"/" /opt/retroie/configs/all/videomodes.cfg
+
 }
