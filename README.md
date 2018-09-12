@@ -45,6 +45,7 @@ There is a handful of ports and scripts that works properly.
 
 ## Supplementary
 - [X] - ESMusic - Script Installer for EmulationStation Music. Working, just needs a bit of polish.
+- [X] - ES-Theme-Homebrew - Script Installer for My Custom EmulationStation theme. Here just in case I need to format the SD Card.
 
 ## Hall of Fame - Scripts Accepted into RetroPie-Setup
 None yet :(
