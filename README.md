@@ -1,6 +1,6 @@
 # RetroPie-More
 A small collection of experimental RetroPie-Setup scriptmodules to add new ports, emulators or libretrocores.
-There is a handful of ports and scripts that works properly.
+There is a handful of scripts that works properly.
 
 ## Ports
 - [X] - alex4 - Alex the Allegator 4
@@ -41,7 +41,9 @@ There is a handful of ports and scripts that works properly.
 - [X] - lr-theodore - Thomson TO8 Emu for libretro. Working properly.
 - [ ] - lr-mesen - NES Emulator
 - [ ] - lr-lutro - 2D Game Framework
-- [ ] - lr-chailove - 2D Game Framework with chaiscript
+- [ ] - lr-chailove - 2D Game Framework with chaiscript.
+- [ ] - lr-thepowdertoy - Free 2D Physics Game for libretro.
+- [ ] - lr-meteor - GBA Emulator
 
 ## Supplementary
 - [X] - ESMusic - Script Installer for EmulationStation Music. Working, just needs a bit of polish.
