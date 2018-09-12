@@ -9,7 +9,7 @@ function depends_esmusic() {
 }
 
 function _is_enabled_esmusic() {
-    grep -q 'sudo python /opt/retropie/supplementary/esmusic/esmusic.py' /etc/rc.local
+    grep -q 'sudo python /opt/retropie/supplementary/esmusic/esmusic.py &' /etc/rc.local
     return $?
 }
 
@@ -58,7 +58,7 @@ restart = True # If true, this will cause the script to fade the music out and -
 startsong = "" # if this is not blank, this is the EXACT, CaSeSeNsAtIvE filename of the song you always want to play first on boot.
 
 # All the emulators/programs that will stop the music
-emulatornames = ["oricutron","startx","coolcv_pi","retroarch","ags","uae4all2","uae4arm","capricerpi","linapple","hatari","stella","atari800","xroar","vice","daphne","reicast","pifba","osmose","gpsp","jzintv","basiliskll","mame","advmame","dgen","openmsx","mupen64plus","gngeo","dosbox","ppsspp","simcoupe","scummvm","snes9x","pisnes","frotz","fbzx","fuse","gemrb","cgenesis","zdoom","eduke32","lincity","love","kodi","alephone","micropolis","openbor","openttd","opentyrian","cannonball","tyrquake","ioquake3","residualvm","xrick","sdlpop","uqm","stratagus","wolf4sdl","solarus","minecraft-pi","TheyNeedToBeFed","SuperCrateBox","xm7","kodi-standalone","chromium-standalone","smw","gnp","gearboy","supertux","wolf4sdl","gnp","x64"]
+emulatornames = ["oricutron","startx","coolcv_pi","retroarch","ags","uae4all2","uae4arm","capricerpi","linapple","hatari","stella","atari800","xroar","vice","daphne","reicast","pifba","osmose","gpsp","jzintv","basiliskll","mame","advmame","dgen","openmsx","mupen64plus","gngeo","dosbox","ppsspp","simcoupe","scummvm","snes9x","pisnes","frotz","fbzx","fuse","gemrb","cgenesis","zdoom","eduke32","lincity","love","kodi","alephone","micropolis","openbor","openttd","opentyrian","cannonball","tyrquake","ioquake3","residualvm","xrick","sdlpop","uqm","stratagus","wolf4sdl","solarus","minecraft-pi","TheyNeedToBeFed","SuperCrateBox","xm7","kodi-standalone","chromium-browser","smw","gnp","gearboy","supertux","wolf4sdl","gnp","scratch"]
 
 
 
@@ -192,7 +192,7 @@ while True:
 	time.sleep(1);
 	#end of the main while loop
 	
-print "An error has occurred that has stopped Test1.py from executing." #theoretically you should neve
+print "An error has occurred that has stopped esmusic.py from executing." #theoretically you should neve
 
 _EOF_
     if ! _is_enabled_esmusic; then
