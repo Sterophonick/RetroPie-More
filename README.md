@@ -40,12 +40,12 @@ There is a handful of scripts that works properly.
 ## Libretro Cores
 - [X] - lr-theodore - Thomson TO8 Emu for libretro. Working properly.
 - [ ] - lr-mesen - NES Emulator
-- [ ] - lr-lutro - 2D Game Framework
+- [X] - lr-lutro - 2D Game Framework based on Love2D
 - [ ] - lr-chailove - 2D Game Framework with chaiscript.
 - [ ] - lr-thepowdertoy - Free 2D Physics Game for libretro.
 - [ ] - lr-meteor - GBA Emulator
 - [ ] - lr-jamvm - Apparently this is a full Java Virtual Machine port to libretro.
-- [ ] - lr-vemulator - Dreamcast Visual Memory Unit Emulator
+- [X] - lr-vemulator - Dreamcast Visual Memory Unit Emulator
 
 ## Supplementary
 - [X] - ESMusic - Script Installer for EmulationStation Music. Working, just needs a bit of polish.
