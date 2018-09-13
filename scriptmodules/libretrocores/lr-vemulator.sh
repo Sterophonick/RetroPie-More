@@ -16,12 +16,12 @@ rp_module_licence="GPL3 https://github.com/libretro/vemulator-libretro/blob/mast
 rp_module_section="exp"
 
 function sources_lr-vemulator() {
-    gitPullOrClone "$md_build" https://github.com/libretro/vemulator-libretro.git
+    gitPullOrClone "$md_build" https://github.com/MJaoune/vemulator-libretro
 }
 
 function build_lr-vemulator() {
     make clean
-    make libretro
+    make
     md_ret_require="$md_build/vemulator_libretro.so"
 }
 
@@ -35,6 +35,6 @@ function install_lr-vemulator() {
 function configure_lr-vemulator() {
     mkRomDir "vmu"
     ensureSystemretroconfig "vmu"
-    addEmulator 1 "$md_id" "vmi" "$md_inst/vemulator_libretro.so"
+    addEmulator 1 "$md_id" "vmu" "$md_inst/vemulator_libretro.so"
     addSystem "vmu"
 }
