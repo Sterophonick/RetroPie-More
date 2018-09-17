@@ -36,6 +36,7 @@ There is a handful of scripts that works properly.
 
 ## Emulators
 - [ ] - gnash - GNU Flash Player
+- [X] - quasi88 - Replacement of the Quasi88 scriptmodule, this one actually works.
 
 ## Libretro Cores
 - [X] - lr-theodore - Thomson TO8 Emu for libretro. Working properly.
