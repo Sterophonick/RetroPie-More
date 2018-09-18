@@ -58,7 +58,7 @@ restart = True # If true, this will cause the script to fade the music out and -
 startsong = "" # if this is not blank, this is the EXACT, CaSeSeNsAtIvE filename of the song you always want to play first on boot.
 
 # All the emulators/programs that will stop the music
-emulatornames = ["oricutron","startx","coolcv_pi","retroarch","ags","uae4all2","uae4arm","capricerpi","linapple","hatari","stella","atari800","xroar","vice","daphne","reicast","pifba","osmose","gpsp","jzintv","basiliskll","mame","advmame","dgen","openmsx","mupen64plus","gngeo","dosbox","ppsspp","simcoupe","scummvm","snes9x","pisnes","frotz","fbzx","fuse","gemrb","cgenesis","zdoom","eduke32","lincity","love","kodi","alephone","micropolis","openbor","openttd","opentyrian","cannonball","tyrquake","ioquake3","residualvm","xrick","sdlpop","uqm","stratagus","wolf4sdl","solarus","minecraft-pi","TheyNeedToBeFed","SuperCrateBox","xm7","kodi-standalone","chromium-browser","smw","gnp","gearboy","supertux","wolf4sdl","gnp","scratch"]
+emulatornames = ["oricutron","startx","coolcv_pi","retroarch","ags","uae4all2","uae4arm","capricerpi","linapple","hatari","stella","atari800","xroar","vice","daphne","reicast","pifba","osmose","gpsp","jzintv","basiliskll","mame","advmame","dgen","openmsx","mupen64plus","gngeo","dosbox","ppsspp","simcoupe","scummvm","snes9x","pisnes","frotz","fbzx","fuse","gemrb","cgenesis","zdoom","eduke32","lincity","love","kodi","alephone","micropolis","openbor","openttd","opentyrian","cannonball","tyrquake","ioquake3","residualvm","xrick","sdlpop","uqm","stratagus","wolf4sdl","solarus","minecraft-pi","TheyNeedToBeFed","SuperCrateBox","xm7","kodi-standalone","chromium-browser","smw","gnp","gearboy","supertux","wolf4sdl","gnp","scratch","np2pi"]
 
 
 
