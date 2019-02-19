@@ -34,7 +34,7 @@ function sources_lr-mvsmile() {
 
 function build_lr-mvsmile() {
     rpSwap on 2000
-    local params=($(_get_params_lr-mame) SUBTARGET=arcade)
+    local params=($(_get_params_lr-mame) SOURCES=src/mame/drivers/vsmile.cpp)
     make clean
     make "${params[@]}"
     rpSwap off
