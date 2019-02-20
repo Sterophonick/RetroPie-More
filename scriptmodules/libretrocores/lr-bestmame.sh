@@ -11,7 +11,7 @@
 
 rp_module_id="lr-bestmame"
 rp_module_desc="lr-bestmame - Sterophonick's personal recommended mame/mess drivers (libretro)."
-rp_module_help="ROM Extension: .zip\n\nSupported systems: vsmile, cdimono1, arcadia, fm7, crvision, astrocde, advision, svision, sv8000, pv1000, pv2000, fmtowns, atom, gamecom, gamepock, gameking, mz700, studio2, microvision"
+rp_module_help="ROM Extension: .zip\n\nSupported systems: vsmile, cdimono1, arcadia, fm7, crvision, astrocde, advision, svision, sv8000, pv1000, pv2000, fmtowns, atom, gamecom, gamepock, gameking, mz700, studio2, microvision, gp32, apfm1000, pico"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/libretro/mame/master/LICENSE.md"
 rp_module_section="exp"
 
@@ -34,8 +34,7 @@ function sources_lr-bestmame() {
 
 function build_lr-bestmame() {
     rpSwap on 2000
-    local params=($(_get_params_lr-mame) SOURCES=src/mame/drivers/vsmile.cpp,src/mame/drivers/cdi.cpp,src/mame/drivers/arcadia.cpp,src/mame/drivers/fm7.cpp,src/mame/drivers/crvision.cpp,src/mame/drivers/astrocde.cpp,src/mame/driver
-s/advision.cpp,src/mame/drivers/svision.cpp,src/mame/drivers/sv8000.cpp,src/mame/drivers/pv1000.cpp,src/mame/drivers/pv2000.cpp,src/mame/drivers/fmtowns.cpp,src/mame/drivers/atom.cpp,src/mame/drivers/gamecom.cpp,src/mame/drivers/gamepock.cpp,src/mame/drivers/gameking.cpp,src/mame/drivers/mz700.cpp,src/mame/drivers/studio2.cpp,src/mame/drivers/microvsn.cpp)
+    local params=($(_get_params_lr-mame) SOURCES=src/mame/drivers/vsmile.cpp,src/mame/drivers/cdi.cpp,src/mame/drivers/arcadia.cpp,src/mame/drivers/fm7.cpp,src/mame/drivers/crvision.cpp,src/mame/drivers/astrocde.cpp,src/mame/drivers/advision.cpp,src/mame/drivers/svision.cpp,src/mame/drivers/sv8000.cpp,src/mame/drivers/pv1000.cpp,src/mame/drivers/pv2000.cpp,src/mame/drivers/fmtowns.cpp,src/mame/drivers/atom.cpp,src/mame/drivers/gamecom.cpp,src/mame/drivers/gamepock.cpp,src/mame/drivers/gameking.cpp,src/mame/drivers/mz700.cpp,src/mame/drivers/studio2.cpp,src/mame/drivers/microvsn.cpp,src/mame/drivers/gp32.cpp,src/mame/drivers/apf.cpp,src/mame/drivers/segapico.cpp)
     make clean
     make "${params[@]}"
     rpSwap off
@@ -51,7 +50,7 @@ function install_lr-bestmame() {
 
 function configure_lr-bestmame() {
     local system
-    for system in vsmileg svision advision sv8000 cdimono1 arcadiafm7 crvision astrocde advision pv1000 pv2000 fmtowns atom gamecom gamepock gameking mz700 studio2 microvsn; do
+    for system in vsmileg svision advision sv8000 cdimono1 arcadiafm7 crvision astrocde advision pv1000 pv2000 fmtowns atom gamecom gamepock gameking mz700 studio2 microvsn gp32 apfm1000 pico; do
         mkRomDir "$system"
         ensureSystemretroconfig "$system"
         addEmulator 0 "$md_id" "$system" "$md_inst/bestmame_libretro.so"
