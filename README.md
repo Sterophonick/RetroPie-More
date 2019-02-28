@@ -48,7 +48,8 @@ There is a handful of scripts that works properly.
 - [X] - lr-vemulator - Dreamcast Visual Memory Unit Emulator
 - [ ] - lr-xmil - Libretro port of X Millennium Sharp X1 emulator
 - [ ] - lr-mu - PalmOS emulator for Libretro
-- [ ] - lr-mvsmile - Standalone V.Smile Driver from MAME
+- [X] - lr-fullmame - Full version of MAME for libretro (MAME + MESS)
+- [ ] - lr-simcoupe - Experimental libretro port of SimCoupe
 
 ## Supplementary
 - [X] - ESMusic - Script Installer for EmulationStation Music. Working, just needs a bit of polish.
