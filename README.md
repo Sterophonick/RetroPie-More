@@ -33,6 +33,7 @@ There is a handful of scripts that works properly.
 - [X] - TuxFootball - 2D Soccer Game. Tested and Works.
 - [ ] - minetest - Minecraft clone. Untested.
 - [ ] - plee-the-bear - 2D platform game. Doesn't work probably because of OpenGL.
+- [ ] - kobodeluxe - 2D game of space battle
 
 ## Emulators
 - [ ] - gnash - GNU Flash Player
