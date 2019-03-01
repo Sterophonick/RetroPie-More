@@ -52,6 +52,7 @@ There is a handful of scripts that works properly.
 - [ ] - lr-mu - PalmOS emulator for Libretro
 - [X] - lr-fullmame - Full version of MAME for libretro (MAME + MESS)
 - [ ] - lr-simcoupe - Experimental libretro port of SimCoupe
+- [ ] - lr-blastem - The fast and accurate Genesis Emulator
 
 ## Supplementary
 - [X] - ESMusic - Script Installer for EmulationStation Music. Working, just needs a bit of polish.
