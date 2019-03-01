@@ -34,6 +34,7 @@ There is a handful of scripts that works properly.
 - [ ] - minetest - Minecraft clone. Untested.
 - [ ] - plee-the-bear - 2D platform game. Doesn't work probably because of OpenGL.
 - [ ] - kobodeluxe - 2D game of space battle
+- [ ] - a7xpg - chase action game
 
 ## Emulators
 - [ ] - gnash - GNU Flash Player
