@@ -53,6 +53,7 @@ There is a handful of scripts that works properly.
 - [X] - lr-fullmame - Full version of MAME for libretro (MAME + MESS)
 - [ ] - lr-simcoupe - Experimental libretro port of SimCoupe
 - [ ] - lr-blastem - The fast and accurate Genesis Emulator
+- [ ] - lr-quasi88 - Quasi88 port to libretro
 
 ## Supplementary
 - [X] - ESMusic - Script Installer for EmulationStation Music. Working, just needs a bit of polish.
